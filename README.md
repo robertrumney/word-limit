@@ -1,14 +1,24 @@
-# Word Limit Enforcer for Unity UI InputField
+# Word Limit Enforcer (Legacy InputField & TextMesh Pro)
 
-This Unity script limits the number of **words** (not characters) a user can enter into a standard `InputField`.
+A Unity component that limits input by **word count** instead of characters. Supports both the legacy `InputField` and TextMesh Pro `TMP_InputField`.
 
 ## Features
+- Enforces a maximum word count in real time
+- Works with either legacy UI or TextMesh Pro
+- Optional serialized references or automatic component detection
 
-- Works with Unity's legacy `InputField` (not TextMeshPro).
-- Enforces a maximum word count in real-time.
-- Automatically trims extra words beyond the limit.
+## Setup
+1. Add the script to the same GameObject as your input component.
+2. If using TextMesh Pro, ensure the package is installed and define the `TMP_PRESENT` scripting symbol in Player Settings.
+3. Optionally assign the input field references in the Inspector.
 
-## How to Use
+## Usage
+- Set the desired word limit in the Inspector.
+- The input will be trimmed to the limit as soon as it is exceeded.
 
-1. Attach the `WordLimitEnforcer` script to any GameObject with an `InputField` component.
-2. Set the desired `wordLimit` in the Inspector.
+## Notes
+- If both legacy and TMP inputs are present, both will be governed by the same limit.
+- Trimming occurs on whitespace-delimited words.
+
+## License
+MIT
